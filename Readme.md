@@ -4,7 +4,7 @@ Simple url-shortener service written with lua for nginx (openresty)
 
 ## How to deploy?
 
-```
+```bash
 git clone https://github.com/theikkila/urlid.git
 cd urlid
 docker build -t theikkila/urlid .
@@ -19,7 +19,7 @@ docker inspect `sudo docker run -d theikkila/urlid` |grep IPAddress
 
 
 `GET /{id}[0-9a-z]`
-Redirects with `302` if link found, otherwise returns `404`
+Redirects with `301` if link found, otherwise returns `404`
 
 `POST /shorten`
 Creates new shortened link and returns id for it as `text/plain`
